@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --port 18468",
     "build": "tsc --noEmit -p tsconfig.app.json && vite build",
-    "preview": "vite preview --port 18468"
+    "preview": "vite preview --port 18468",
+    "verify": "esbuild src/store/useClaimStore.ts --bundle --format=cjs --platform=node --outfile=scripts/useClaimStore.cjs --external:axios \"--define:import.meta.env={}\" && node scripts/verify-store.cjs"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.10.4",
