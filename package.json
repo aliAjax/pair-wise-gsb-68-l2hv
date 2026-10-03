@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --port 18468",
     "build": "tsc --noEmit -p tsconfig.app.json && vite build",
+    "smoke": "esbuild scripts/smoke.mts --bundle --platform=node --format=esm --outfile=scripts/.smoke.bundle.mjs && node scripts/.smoke.bundle.mjs && rm scripts/.smoke.bundle.mjs",
     "preview": "vite preview --port 18468"
   },
   "dependencies": {
